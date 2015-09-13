@@ -581,6 +581,6 @@ print best
 This code takes a while to run since we increased the number of evaluations: `max_evals=1500`. There is also added output to update you when a new `best` accuracy is found. Curious as to why using this method does not find the best model that we found above: `SVM` with `kernel=linear`, `C=1.416`, and `gamma=15.042`. 
 
 # Conclusion
-We have covered simple examples, like minimizing a deterministic linear function, and complicated examples, like tuning random forest parameters. The documentation for `hyperopt` is [here](http://hyperopt.github.io/hyperopt/). A great video tutorial can be found [here](https://www.youtube.com/watch?v=Mp1xnPfE4PY) 
+We have covered simple examples, like minimizing a deterministic linear function, and complicated examples, like tuning random forest parameters. The documentation for `hyperopt` is [here](http://hyperopt.github.io/hyperopt/). A great video tutorial can be found [here](https://www.youtube.com/watch?v=Mp1xnPfE4PY). Another good blog on hyperopt is [this one](http://fastml.com/optimizing-hyperparams-with-hyperopt/) by FastML. 
 
 The techniques in this post can be used in many domains other than machine learning, such as tuning the `epsilon` parameter in an epsilon-greedy multi-armed bandit, or the parameters passed to a graph generator to make a synthetic network that has certain properties. We will write more on that later. 
