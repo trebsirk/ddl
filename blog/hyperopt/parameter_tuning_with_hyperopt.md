@@ -30,7 +30,7 @@ The function `fmin` first takes a function to minimize, denoted `fn`, which we h
 
 The next parameter specifies the search space, and in this example it is the continuous range of numbers between 0 and 1, specified by `hp.uniform('x', 0, 1)`. `hp.uniform` is a built-in `hyperopt` function that takes three parameters: the name, `x`, and the lower and upper bound of the range, `0` and `1`. 
 
-The parameter `algo` takes a search algorithm, in this case `tpe` which stands for *tree of Parzen estimators*. This topic is beyond the scope of this blog post, but the mathochistic reader may peruse [this](http://arxiv.org/abs/1209.5111) for details. `algo` can also be set to `hyperopt.random`, but we do not cover that here as it is widely known search strategy. However, in a future post, we can 
+The parameter `algo` takes a search algorithm, in this case `tpe` which stands for *tree of Parzen estimators*. This topic is beyond the scope of this blog post, but the mathochistic reader may peruse [this](http://arxiv.org/abs/1209.5111) for details. `algo` can also be set to `hyperopt.random`, but we do not cover that here as it is widely known search strategy. 
 
 Finally, we specify the maximum number of evaluations `max_evals` the `fmin` function will perform. 
 `fmin` returns a python dictionary of values. 
@@ -581,6 +581,6 @@ print best
 This code takes a while to run since we increased the number of evaluations: `max_evals=1500`. There is also added output to update you when a new `best` accuracy is found. Curious as to why using this method does not find the best model that we found above: `SVM` with `kernel=linear`, `C=1.416`, and `gamma=15.042`. 
 
 # Conclusion
-We have covered simple examples, like minimizing a deterministic linear function, and complicated examples, like tuning random forest parameters. The documentation for `hyperopt` is [here](http://hyperopt.github.io/hyperopt/). A great video tutorial can be found [here](https://www.youtube.com/watch?v=Mp1xnPfE4PY). Another good blog on hyperopt is [this one](http://fastml.com/optimizing-hyperparams-with-hyperopt/) by FastML. 
+We have covered simple examples, like minimizing a deterministic linear function, and complicated examples, like tuning random forest parameters. The documentation for `hyperopt` is [here](http://hyperopt.github.io/hyperopt/). Another good blog on hyperopt is [this one](http://fastml.com/optimizing-hyperparams-with-hyperopt/) by FastML. A SciPy Conference paper by the `hyperopt` authors is [Hyperopt: A Python Library for Optimizing the Hyperparameters of Machine Learning Algorithms](http://conference.scipy.org/proceedings/scipy2013/pdfs/bergstra_hyperopt.pdf), with an accompanying [video tutorial](https://www.youtube.com/watch?v=Mp1xnPfE4PY). A more techical treatment of the engineering ins and outs is [Making a Science of Model Search](http://arxiv.org/abs/1209.5111). 
 
 The techniques in this post can be used in many domains other than machine learning, such as tuning the `epsilon` parameter in an epsilon-greedy multi-armed bandit, or the parameters passed to a graph generator to make a synthetic network that has certain properties. We will write more on that later. 
